@@ -25,11 +25,6 @@ version_command() {
     file="$(pwd)/.tool-versions"
   fi
 
-  if [ -L "$file" ]; then
-    # Resolve file path if symlink
-    file="$(resolve_symlink "$file")"
-  fi
-
   check_if_plugin_exists "$plugin_name"
 
   declare -a resolved_versions
